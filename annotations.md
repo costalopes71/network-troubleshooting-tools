@@ -1,3 +1,5 @@
+## Utilities commands for troubleshooting a network
+
 ping <server>
 
 route -n
