@@ -35,6 +35,21 @@ iptablas -D INPUT -p tcp --dport 21 -j DROP
 tcpdump -i <interface> -n
   show all the traffic coming in and out the interface. Option -n don't do the reverse dns lookup.
 
+sudo dhclient
+  obtains an ip from the dhcp server
+
+sudo dhclient -r
+  release the ip address
+
+arp
+  shows routing table (layer 2 mac address  <->  layer 3 ipv4 address)
+  useful flags: -a (shows dns vs mac) -n (shows ip vs mac)
+
+ip -6 neighbor|neigh show
+  shows routing table (layer 2 mac addres <-> layer 3 ipv6 address)
+  man page: man ip-neighbor
+
+
 ### Reverse shell
 
 nc -lnvp <port_number> 
