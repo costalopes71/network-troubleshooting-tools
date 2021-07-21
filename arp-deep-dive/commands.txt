@@ -1,0 +1,23 @@
+sudo arp -d <ip_address_or_hostname>
+  deletes an arp entrie
+
+sudo arp -s <ip_address> <mac_address>
+  adds a static arp entrie (CM -> completed and static)
+
+sudo ip -s -s neighbor flush al
+  removes all entries from arp cache (they will remain as imcomplete until the system wipe it off automatcaly)
+
+sudo ip link set arp off dev <interface>
+  clear all arp entries immediatly by turning arp off. Interface parameter is the network interface name
+
+sudo ip link set arp on dev <interface>
+  sets arp on again
+
+sudo ifconfig <interface> down
+  turns the interface down (clearing the arp cache too)
+
+sudo ifconfig <interface> up
+  turns the interce up again
+
+
+
